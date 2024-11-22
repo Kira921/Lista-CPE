@@ -59,6 +59,9 @@ Memória: 16 GB RAM.
 Armazenamento: 512 GB SSD.
 
 12 - Descreva um algoritmo para resolver um cubo mágico.
+Identifique as peças brancas de borda (com duas cores).
+Mova essas peças para formar uma cruz no lado branco.
+Ajuste as bordas para que as cores laterais coincidam com os centros das outras faces.
 
 13 - Qual a diferença entre bit e byte? 
 1 byte = 8 bits.
