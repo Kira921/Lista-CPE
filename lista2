@@ -1,0 +1,199 @@
+Questão 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 5, y = 10, z = x % y;
+    cout << "x: " << x << ", y: " << y << ", z: " << z << endl;
+    return 0;
+}
+
+
+Questão 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2;
+    cout << "Digite dois números: ";
+    cin >> num1 >> num2;
+
+    cout << "Soma: " << num1 + num2 << endl;
+    cout << "Produto: " << num1 * num2 << endl;
+    cout << "Diferença: " << num1 - num2 << endl;
+    cout << "Quociente: " << num1 / num2 << endl;
+
+    return 0;
+}
+
+
+
+Questão 3
+#include <iostream>
+#define PI 3.14159
+using namespace std;
+
+int main() {
+    double raio;
+    cout << "Digite o raio do círculo: ";
+    cin >> raio;
+
+    cout << "Diâmetro: " << 2 * raio << endl;
+    cout << "Área: " << PI * raio * raio << endl;
+
+    return 0;
+}
+
+
+Questão 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Quadrado:\n****\n*  *\n*  *\n****\n";
+    cout << "Círculo:\n ***\n*   *\n ***\n";
+    cout << "Seta:\n  *\n ***\n*****\n";
+    cout << "Losango:\n  *\n * *\n*   *\n * *\n  *\n";
+    return 0;
+}
+
+
+Questão 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    double largura, comprimento;
+    cout << "Digite a largura em metros: ";
+    cin >> largura;
+    cout << "Digite o comprimento em metros: ";
+    cin >> comprimento;
+
+    cout << "Área da sala: " << largura * comprimento << " metros quadrados" << endl;
+
+    return 0;
+}
+
+
+Questão 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Digite dois números inteiros: ";
+    cin >> a >> b;
+
+    if (a % b == 0) {
+        cout << a << " é múltiplo de " << b << endl;
+    } else {
+        cout << a << " não é múltiplo de " << b << endl;
+    }
+
+    return 0;
+}
+
+
+Questão 7
+#include <iostream>
+using namespace std;
+
+bool ehPrimo(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i <= num / 2; ++i) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int num;
+    cout << "Digite um número inteiro: ";
+    cin >> num;
+
+    if (ehPrimo(num)) {
+        cout << num << " é primo." << endl;
+    } else {
+        cout << num << " não é primo." << endl;
+    }
+
+    return 0;
+}
+
+
+Questão 8
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double cateto1, cateto2;
+    cout << "Digite o valor dos dois catetos: ";
+    cin >> cateto1 >> cateto2;
+
+    double hipotenusa = sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+    cout << "Hipotenusa: " << hipotenusa << endl;
+
+    return 0;
+}
+
+
+Questão 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    double distancia, custo;
+    cout << "Digite a distância percorrida em km: ";
+    cin >> distancia;
+
+    if (distancia <= 50) {
+        custo = distancia * 1.75;
+    } else if (distancia <= 150) {
+        custo = 50 * 1.75 + (distancia - 50) * 1.65;
+    } else {
+        custo = 50 * 1.75 + 100 * 1.65 + (distancia - 150) * 1.50;
+    }
+
+    cout << "Custo total: R$ " << custo << endl;
+    cout << "Custo médio por km: R$ " << custo / distancia << endl;
+
+    return 0;
+}
+
+
+Questão 10
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string texto;
+    cout << "Digite uma string com 5 caracteres: ";
+    cin >> texto;
+
+    int contagemVogais[5] = {0}; // Contagem de a, e, i, o, u
+    string vogais = "aeiou";
+
+    for (char c : texto) {
+        for (int i = 0; i < vogais.size(); ++i) {
+            if (c == vogais[i]) contagemVogais[i]++;
+        }
+    }
+
+    cout << "Contagem de vogais:\n";
+    for (int i = 0; i < vogais.size(); ++i) {
+        if (contagemVogais[i] > 0)
+            cout << vogais[i] << ": " << contagemVogais[i] << endl;
+    }
+
+    for (char &c : texto) {
+        if (c == 'a') c = 'i';
+        else if (c == 'e') c = 'o';
+        else if (c == 'i') c = 'u';
+    }
+
+    cout << "String criptografada: " << texto << endl;
+
+    return 0;
+}
